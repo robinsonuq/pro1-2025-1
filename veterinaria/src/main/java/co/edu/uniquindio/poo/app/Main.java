@@ -1,6 +1,7 @@
 package co.edu.uniquindio.poo.app;
 
 import co.edu.uniquindio.poo.model.Mascota;
+import co.edu.uniquindio.poo.model.Veterinaria;
 
 import javax.swing.*;
 
@@ -15,13 +16,22 @@ public class Main {
         String color = "cafe";
         float peso = 2.3f;
 
-        Mascota mascota = new Mascota(nombre,especie,raza,
-                (byte)edad,genero,color,peso);
 
-       mascota.setNombre("Luna");
+        Veterinaria veterinaria =  new Veterinaria("Los peludos",
+                "uq","234567",5);
+         Mascota mascota = new Mascota(nombre,especie,raza,
+              (byte)edad,genero,color,peso);
 
-       System.out.println(mascota.getNombre());
+        veterinaria.registrarMascota(mascota);
 
-        JOptionPane.showMessageDialog(null,mascota);
+        veterinaria.buscarMascota("zeus");
+
+      // mascota.setNombre("Luna");
+
+       //System.out.println(mascota.getNombre());
+
+        //JOptionPane.showMessageDialog(null,mascota);
+
+
     }
 }
