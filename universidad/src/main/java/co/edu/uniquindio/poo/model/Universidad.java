@@ -51,4 +51,35 @@ public class Universidad {
                 ", listaEstudiantes=" + listaEstudiantes +
                 '}';
     }
+
+    public String registrarEstudiante(String nombre, String identificacion){
+        String mensaje              = "";
+        Estudiante encontrado       = null;
+        Estudiante nuevoEstudiante  = null;
+
+        encontrado = buscarEstudiante(identificacion);
+        if(encontrado != null){// ya existe en el sistema
+            mensaje = "El estudiante "+ encontrado.getNombre() +" ya existe en la universidad";
+            return mensaje;
+        }
+        nuevoEstudiante = new Estudiante(nombre,identificacion);
+        listaEstudiantes.add(nuevoEstudiante);
+        mensaje = "El estudiante fúe registrado exitosamente";
+        return mensaje;
+
+    }
+
+    private Estudiante buscarEstudiante(String identificacion) {
+        Estudiante encontrado = null;
+
+        for(Estudiante estudianteAux : listaEstudiantes){
+            if(estudianteAux.getIdentificacion().equals(identificacion)){
+                return estudianteAux;
+            }
+        }
+
+        return  encontrado;
+    }
+
+
 }
