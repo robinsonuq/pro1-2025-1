@@ -82,4 +82,39 @@ public class Universidad {
     }
 
 
+    public String registrarNota(String identificacion, String nombreNota, float valorNota) {
+
+        String mensaje = "";
+
+        Estudiante estudianteEncontrado = buscarEstudiante(identificacion);
+
+        if(estudianteEncontrado != null){
+            mensaje = estudianteEncontrado.registrarNota(nombreNota,valorNota);
+        }else{
+            mensaje = "El estudiante no esta resgitardo en la universidad";
+        }
+        return mensaje;
+    }
+
+    public float calcularPromedioGeneral(){
+        float sumatoria = 0;
+
+        for (Estudiante estudiante: listaEstudiantes ) {
+            sumatoria += estudiante.calcularDefinitiva();
+        }
+
+        return sumatoria / listaEstudiantes.size();
+    }
+
+    public String actualizarNota(String identificacion, String nombreNota, float nuevoValorNota) {
+        String mensaje = "";
+        Estudiante estudianteEncontrado = buscarEstudiante(identificacion);
+        if (estudianteEncontrado != null) {
+            mensaje = estudianteEncontrado.actualizarNota(nombreNota,nuevoValorNota);
+        }else{
+            mensaje = "El estudiante no esta resgitardo en la universidad";
+        }
+
+        return mensaje;
+    }
 }

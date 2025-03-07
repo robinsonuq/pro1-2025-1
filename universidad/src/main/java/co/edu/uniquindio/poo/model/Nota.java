@@ -3,7 +3,7 @@ package co.edu.uniquindio.poo.model;
 public class Nota {
 
     private String nombre;
-    private float valor;
+    public float valor;
 
     public Nota(String nombre, float valor) {
         this.nombre = nombre;
@@ -32,5 +32,10 @@ public class Nota {
                 "nombre='" + nombre + '\'' +
                 ", valor=" + valor +
                 '}';
+    }
+
+    public String actualizarNota(float nuevoValorNota) {
+        setValor(nuevoValorNota);
+        return "Nora actualizada";
     }
 }
