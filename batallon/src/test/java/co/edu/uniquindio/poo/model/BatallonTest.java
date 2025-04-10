@@ -37,5 +37,30 @@ public class BatallonTest {
         assertThrows(Throwable.class,()-> batallon.registrarSoldado(soldado2));
     }
 
+    @Test
+    public void verificarSoldadoConRTest(){
+
+        Soldado soldado = new Soldado("12","Robin","Arias",new ArrayList<>());
+        Soldado soldado2 = new Soldado("12","Luis","Arias",new ArrayList<>());
+        Soldado soldado3 = new Soldado("123","Pedro","Muñoz",new ArrayList<>());
+        Soldado soldado4 = new Soldado("123","Raul","Muñoz",new ArrayList<>());
+
+        batallon.registrarSoldado(soldado);
+        batallon.registrarSoldado(soldado2);
+        batallon.registrarSoldado(soldado3);
+        batallon.registrarSoldado(soldado4);
+
+        ArrayList<Soldado> soldadosCoR = batallon.obtenerSoldadosConR();
+
+        // son los que yo espero
+        ArrayList<Soldado> listaAux = new ArrayList<>();
+
+        listaAux.add(soldado);
+        listaAux.add(soldado4);
+
+        assertIterableEquals(listaAux,soldadosCoR);
+
+    }
+
 
 }
