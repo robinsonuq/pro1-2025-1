@@ -23,6 +23,7 @@ public class Reserva {
 
     public double calcularCosto(){
         double costo = 0;
+
         costo = vehiculo.calcularCosto(this);
         return costo;
     }
