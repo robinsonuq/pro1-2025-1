@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+
+<AnchorPane prefHeight="625.0" prefWidth="462.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="co.edu.uniquindio.poo.universidaduq.viewcontroller.ClienteViewController">
+   <children>
+      <SplitPane dividerPositions="0.5126811594202898" layoutX="20.0" layoutY="56.0" orientation="VERTICAL" prefHeight="554.0" prefWidth="430.0">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="295.0" prefWidth="428.0">
+               <children>
+                  <Label layoutX="124.0" layoutY="14.0" text="Informacion del Cliente" textFill="#2f1694">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="14.0" layoutY="32.0" prefHeight="7.0" prefWidth="401.0" />
+                  <Label layoutX="23.0" layoutY="50.0" prefHeight="17.0" prefWidth="72.0" text="Nombres :" textFill="#351dab" />
+                  <Label layoutX="23.0" layoutY="92.0" prefHeight="17.0" prefWidth="106.0" text="Apellidos :" textFill="#351dab" />
+                  <Label layoutX="23.0" layoutY="133.0" text="Num. Identificacion :" textFill="#351dab" />
+                  <Label layoutX="23.0" layoutY="169.0" text="Correo :" textFill="#351dab" />
+                  <TextField fx:id="txtNombres" layoutX="132.0" layoutY="46.0" prefHeight="25.0" prefWidth="277.0" />
+                  <TextField fx:id="txtApellidos" layoutX="132.0" layoutY="88.0" prefHeight="25.0" prefWidth="277.0" />
+                  <TextField fx:id="txtNumIdentificacion" layoutX="131.0" layoutY="129.0" prefHeight="25.0" prefWidth="277.0" />
+                  <TextField fx:id="txtCorreo" layoutX="132.0" layoutY="174.0" prefHeight="25.0" prefWidth="277.0" />
+                  <Separator layoutX="14.0" layoutY="217.0" prefHeight="0.0" prefWidth="401.0" />
+                  <Button fx:id="btnAgregar" layoutX="264.0" layoutY="233.0" mnemonicParsing="false" onAction="#agregarAction" prefHeight="25.0" prefWidth="144.0" text="Agregar">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+                  <Button fx:id="btnNuevo" layoutX="33.0" layoutY="233.0" mnemonicParsing="false" onAction="#nuevoAction" prefHeight="25.0" prefWidth="144.0" text="Nuevo">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="100.0" prefWidth="160.0">
+               <children>
+                  <Label layoutX="10.0" layoutY="15.0" prefHeight="19.0" prefWidth="154.0" text="Listado de Clientes" textFill="#2f1694">
+                     <font>
+                        <Font name="System Bold" size="13.0" />
+                     </font>
+                  </Label>
+                  <Separator layoutX="14.0" layoutY="44.0" prefHeight="7.0" prefWidth="401.0" />
+                  <TableView fx:id="tableClientes" layoutX="15.0" layoutY="51.0" prefHeight="149.0" prefWidth="401.0">
+                    <columns>
+                      <TableColumn fx:id="columnNombre" prefWidth="75.0" text="Nombre" />
+                      <TableColumn fx:id="columnIdentificacion" prefWidth="153.0" text="Identificacion" />
+                    </columns>
+                  </TableView>
+                  <Button fx:id="btnEliminar" layoutX="274.0" layoutY="214.0" mnemonicParsing="false" onAction="#eliminarAction" prefHeight="25.0" prefWidth="144.0" text="Eliminar">
+                     <font>
+                        <Font name="System Bold" size="14.0" />
+                     </font>
+                  </Button>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+      <Label layoutX="117.0" layoutY="14.0" prefHeight="21.0" prefWidth="253.0" text="Gestion de Clientes" textFill="#4d32b5">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
